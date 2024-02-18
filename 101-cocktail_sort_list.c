@@ -3,7 +3,7 @@ void swap_nodes(listint_t **list, listint_t **a, listint_t **b, int *s);
 void css_recurse(listint_t **l, listint_t *curr, listint_t *stop, int dir);
 /**
  * cocktail_sort_list - sort doubly-linked list with cocktail method
- * @list: list to sort
+ * @list: list to sort.
  */
 void cocktail_sort_list(listint_t **list)
 {

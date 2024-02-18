@@ -2,7 +2,7 @@
 
 /**
  * knuth_seq - Find largest gap for a given size
- * @size: Size of the array
+ * @size: Size of the array.
  * Return: Void
  */
 

@@ -45,3 +45,69 @@ void sift_down(int *array, size_t start, size_t end, size_t size)
 			return;
 		}
 	}
+}
+
+
+/**
+ * heapify - Arranges heap so largest number is root
+ * @array: array (for print)
+ * @size: size of array (for print)
+ */
+void heapify(int *array, size_t size)
+{
+	int start;
+
+	/* Last non-leaf */
+	start = (size / 2) - 1;
+
+	while (start >= 0)
+	{
+		sift_down(array, start, size - 1, size);
+		start--;
+	}
+}
+
+
+/**
+ * heap_sort - Sort list in ascending order
+ * @array: Array to be sorted
+ * @size: Size of the array
+ * Return: Void
+ */
+void heap_sort(int *array, size_t size)
+{
+	size_t last;
+
+	if (!array || size < 2)
+	{
+		return;
+	}
+
+	last = size - 1;
+
+	heapify(array, size);
+
+	while (last > 0)
+	{
+		swap_elem(array, size, &array[last], &array[0]);
+		last--;
+		sift_down(array, 0, last, size);
+	}
+}
+
+/**
+ * swap_elem - swap value of array elements
+ * @array: array (for print)
+ * @size: size of array (for print)
+ * @a: pointer to array element
+ * @b: pointer to array element
+ */
+void swap_elem(int *array, size_t size, int *a, int *b)
+{
+	int temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+	print_array(array, size);
+}
